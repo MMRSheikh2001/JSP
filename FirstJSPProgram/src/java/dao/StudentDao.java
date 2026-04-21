@@ -21,7 +21,11 @@ public class StudentDao {
     static PreparedStatement ps;
     static ResultSet rs;
     static String sql;
+/**
 
+
+
+*/
     public static int save(Student s) {
         int value = 0;
         sql = "insert into student(name,email,address,cell) values(?,?,?,?)";
