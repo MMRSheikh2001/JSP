@@ -30,7 +30,7 @@ request.setAttribute("list",list);
                 <td>${s.getCell()}</td>
                 <td>
                     <a href="#" target="target">Edit</a>
-                    <a href="#" target="target">Delete</a>
+                    <a href="deleteStudent.jsp?id=${s.getId()}" target="target">Delete</a>
                 </td>
             </tr>      
         </c:forEach>

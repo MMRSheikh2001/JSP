@@ -80,7 +80,7 @@ public class StudentDao {
             ps.setInt(1, s.getId());
             ps.executeUpdate();
             ps.close();
-            DbUtil.getCon().close();f
+            DbUtil.getCon().close();
         } catch (SQLException ex) {
             Logger.getLogger(StudentDao.class.getName()).log(Level.SEVERE, null, ex);
         }
