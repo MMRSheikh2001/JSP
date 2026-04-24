@@ -13,6 +13,7 @@
     </head>
     <body>
         <h1>Hello World!</h1><br><br><br>
-        <a href="studentAddForm.jsp">Save Student</a>
+        <a href="studentAddForm.jsp">Save Student</a><br>
+        <a href="viewAllStudent.jsp">View Student</a>
     </body>
 </html>
