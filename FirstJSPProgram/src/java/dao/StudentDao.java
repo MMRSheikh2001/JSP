@@ -87,8 +87,8 @@ public class StudentDao {
 
     }
 
-    public static int updateStudent(Student s) {
-        int value = 0;
+    public static void updateStudent(Student s) {
+
         sql = "update student set name=?,email=?,address=?,cell=? where id=?";
         try {
             ps = DbUtil.getCon().prepareStatement(sql);
@@ -97,12 +97,35 @@ public class StudentDao {
             ps.setString(3, s.getAddress());
             ps.setString(4, s.getCell());
             ps.setInt(5, s.getId());
-            value = ps.executeUpdate();
+            ps.executeUpdate();
             ps.close();
             DbUtil.getCon().close();
         } catch (SQLException ex) {
             Logger.getLogger(StudentDao.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return value;
+
     }
+
+    public static Student getStudentById(int id) {
+        Student s = null;
+        sql = "select * from student where id=?";
+        try {
+            ps = DbUtil.getCon().prepareStatement(sql);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                s = new Student(rs.getInt("id"), rs.getString("name"),
+                        rs.getString("email"), rs.getString("address"), rs.getString("cell"));
+            }
+            rs.close();
+            ps.close();
+            DbUtil.getCon().close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(StudentDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return s;
+
+    }
+
 }

@@ -14,5 +14,7 @@
     <body>
         <h1 style="color: green">Data Saved</h1>
         <%@include file="studentAddForm.jsp" %>
+        <br><br><br><br>
+        <a href="viewAllStudent.jsp">View Student</a>
     </body>
 </html>

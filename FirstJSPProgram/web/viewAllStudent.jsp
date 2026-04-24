@@ -29,7 +29,7 @@ request.setAttribute("list",list);
                 <td>${s.getAddress()}</td>
                 <td>${s.getCell()}</td>
                 <td>
-                    <a href="#" target="target">Edit</a>
+                    <a href="updateStudentForm.jsp?id=${s.getId()}" target="target">Edit</a>
                     <a href="deleteStudent.jsp?id=${s.getId()}" target="target">Delete</a>
                 </td>
             </tr>      
