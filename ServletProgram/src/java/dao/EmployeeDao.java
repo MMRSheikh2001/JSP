@@ -63,11 +63,11 @@ public class EmployeeDao {
         return eList;
     }
 
-    public static void deleteEmployee(Employee e) {
+    public static void deleteEmployee(int id) {
         sql = "delete from employee where id=?";
         try {
             ps = DbUtil.getCon().prepareStatement(sql);
-            ps.setInt(1, e.getId());
+            ps.setInt(1, id);
             ps.executeUpdate();
             ps.close();
             DbUtil.getCon().close();
