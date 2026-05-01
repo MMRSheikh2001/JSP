@@ -17,10 +17,10 @@ request.setAttribute("list",cList);
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Home</title>
     </head>
     <body>
-        <h1><a href="add.jsp">Add Employee</a></h1>
+        <h1><a href="add.jsp">Add Student</a></h1>
         <br><br>
         <table border="1">
             <thead>
