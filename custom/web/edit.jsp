@@ -5,7 +5,7 @@
 --%>
 <%@page import="entity.Custom" %>
 <%
-Custom c= (Custom)request.getAttribute("cus");
+Custom c= (Custom)request.getAttribute("custom");
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,15 +13,15 @@ Custom c= (Custom)request.getAttribute("cus");
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Student Edit Form</title>
     </head>
     <body>
         <h1>Student Edit Form</h1><br><br>
-         <form action="customservlet" method="post">
+        <form action="customservlet" method="post">
             <input type="hidden" name="action" value="update">
             <input type="hidden" name="id" value="<%=c.getId()%>">   
             <label for="name">
-               Name 
+                Name 
             </label>
             <input type="text" name="name" value="<%=c.getName()%>"><br>
             <label for="custom1">

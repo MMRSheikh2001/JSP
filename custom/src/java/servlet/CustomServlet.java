@@ -56,7 +56,7 @@ public class CustomServlet extends HttpServlet {
             resp.sendRedirect("index.jsp");
         } else if ("edit".equalsIgnoreCase(action)) {
             Custom c = CustomDao.getById(Integer.parseInt(req.getParameter("id")));
-            req.setAttribute("cus", c);
+            req.setAttribute("custom", c);
             req.getRequestDispatcher("edit.jsp").forward(req, resp);
         }
     }
