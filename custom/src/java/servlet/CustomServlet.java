@@ -17,7 +17,7 @@ import java.io.IOException;
  *
  * @author Administrator
  */
-@WebServlet("customservlet")
+@WebServlet("/customservlet")
 public class CustomServlet extends HttpServlet {
     
     @Override
@@ -55,7 +55,7 @@ public class CustomServlet extends HttpServlet {
             CustomDao.delete(Integer.parseInt(req.getParameter("id")));
             resp.sendRedirect("index.jsp");
         } else if ("edit".equalsIgnoreCase(action)) {
-            Custom c = CustomDao.getById(Integer.parseInt("id"));
+            Custom c = CustomDao.getById(Integer.parseInt(req.getParameter("id")));
             req.setAttribute("cus", c);
             req.getRequestDispatcher("edit.jsp").forward(req, resp);
         }
